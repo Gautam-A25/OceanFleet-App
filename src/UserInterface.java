@@ -3,7 +3,7 @@
  *
  * @author Aayush
  *
- * @version 5.0
+ * @version 6.0
  */
 
 import java.util.List;
@@ -15,9 +15,6 @@ public class UserInterface {
 
         VesselUtil vesselUtil = new VesselUtil();
         Scanner scanner = new Scanner(System.in);
-
-        // initialize predefined vessels
-        vesselUtil.getVesselList();
 
         System.out.println("Enter the Vessel Id to check speed");
         String vesselId = scanner.nextLine();
