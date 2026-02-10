@@ -3,7 +3,7 @@
  *
  * @author Aayush
  *
- * @version 3.0
+ * @version 4.0
  */
 
 import java.util.ArrayList;
@@ -29,5 +29,24 @@ public class VesselUtil {
             }
         }
         return null;
+    }
+    public List<Vessel> getHighPerformanceVessels() {
+
+        List<Vessel> result = new ArrayList<>();
+        double maxSpeed = 0;
+
+        for (Vessel vessel : vesselList) {
+            if (vessel.getAverageSpeed() > maxSpeed) {
+                maxSpeed = vessel.getAverageSpeed();
+            }
+        }
+
+        for (Vessel vessel : vesselList) {
+            if (vessel.getAverageSpeed() == maxSpeed) {
+                result.add(vessel);
+            }
+        }
+
+        return result;
     }
 }
