@@ -1,24 +1,33 @@
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Utility class for managing Vessel data.
  *
  * @author Aayush
  *
- * @version 2.0
+ * @version 3.0
  */
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class VesselUtil {
 
-    public static List<Vessel> getVesselList() {
+    private List<Vessel> vesselList = new ArrayList<>();
 
-        List<Vessel> vessels = new ArrayList<>();
+    public List<Vessel> getVesselList() {
 
-        vessels.add(new Vessel("V001", "Atlantic Explorer", 28.5, "Cargo"));
-        vessels.add(new Vessel("V002", "Pacific Guardian", 32.0, "Military"));
-        vessels.add(new Vessel("V003", "Ocean Breeze", 22.8, "Passenger"));
-        vessels.add(new Vessel("V004", "Arctic Voyager", 26.4, "Research"));
+        vesselList.add(new Vessel("V001", "Sea King", 25.5, "Cargo"));
+        vesselList.add(new Vessel("V002", "Ocean Star", 18.0, "Tanker"));
+        vesselList.add(new Vessel("V003", "Wave Rider", 22.3, "Cruise"));
 
-        return vessels;
+        return vesselList;
+    }
+
+    public Vessel getVesselById(String vesselId) {
+        for (Vessel vessel : vesselList) {
+            if (vessel.getVesselId().equals(vesselId)) {
+                return vessel;
+            }
+        }
+        return null;
     }
 }
